@@ -13,12 +13,12 @@ public class TodoController {
 
     private final TodoService todoService;
 
-    @GetMapping()
-    ResponseListDto<TodoDto> getAllTodo(int offset, int limit) {
+    @GetMapping
+    ResponseListDto<TodoDto> getAllTodo(@RequestParam int offset, @RequestParam int limit) {
         return todoService.getAllTodo(offset, limit);
     }
 
-    @PostMapping()
+    @PostMapping
     TodoDto saveTodo(@RequestParam String action) {
         return todoService.saveTodo(action);
     }

@@ -16,5 +16,8 @@ springdoc:
     path: /api-docs
   swagger-ui:
     path: /swagger-ui
-server:
-  port: 8080
+
+auth:
+  enabled: true
+  jwt:
+    secret: secret-key

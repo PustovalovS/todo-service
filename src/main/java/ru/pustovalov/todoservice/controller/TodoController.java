@@ -1,30 +1,31 @@
 package ru.pustovalov.todoservice.controller;
 
+import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import ru.pustovalov.todoservice.dto.ResponseListDto;
+import ru.pustovalov.todoservice.dto.TodoDto;
+import ru.pustovalov.todoservice.todoService.TodoService;
 
 @RestController
 @RequestMapping("todo")
+@AllArgsConstructor
 public class TodoController {
+
     private final TodoService todoService;
 
     @GetMapping()
-    List<TodoDto> getAllTodo() {
-        return todoService.getAllTodo;
-    }
-
-    @GetMapping("/{id}")
-    TodoDto getTodoById(@PathVariable long id) {
-        return todoService.getTodoByid(id);
+    ResponseListDto<TodoDto> getAllTodo(int offset, int limit) {
+        return todoService.getAllTodo(offset, limit);
     }
 
     @PostMapping()
-    TodoDto saveTodo(@RequestBody TodoRequestDto request) {
-        return todoService.saveTodo(request);
+    TodoDto saveTodo(@RequestParam String action) {
+        return todoService.saveTodo(action);
     }
 
     @PutMapping("{id}")
     TodoDto modifyTodo(@PathVariable long id, String action) {
-        return todoService.modifyTodo(id, todo);
+        return todoService.modifyTodo(id, action);
     }
 
     @DeleteMapping("{id}")

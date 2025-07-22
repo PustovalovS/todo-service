@@ -1,4 +1,4 @@
-package ru.pustovalov.todoservice.todoService;
+package ru.pustovalov.todoservice.service;
 
 import lombok.AllArgsConstructor;
 import lombok.val;

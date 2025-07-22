@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 import ru.pustovalov.todoservice.dto.ResponseListDto;
 import ru.pustovalov.todoservice.dto.TodoDto;
-import ru.pustovalov.todoservice.todoService.TodoService;
+import ru.pustovalov.todoservice.service.TodoService;
 
 @RestController
 @RequestMapping("todo")
